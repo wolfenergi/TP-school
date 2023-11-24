@@ -132,4 +132,31 @@ def save_cat(cats_list):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     url = "https://www.bengal-data.com/"
-    search_engine(url, 60000, 10000)
+    # search_engine(url, 60000, 10000)
+    with open("bengal-data.json", 'r', encoding='utf-8') as infile:
+        allCats = json.load(infile)
+        print(f"Name: ALLL \n length:{len(allCats)}")
+
+
+    """ CONNECTION FILE ENGINE
+    files = ["cats_2023-11-10_21-57-21--0-98.json", "cats_2023-11-11_02-24-37---99-180.json",
+             "cats_2023-11-11_02-32-15---181-199.json", "cats_2023-11-11_02-32-15---181-199.json",
+             "cats_2023-11-12_20-50-51---200-299.json", "cats_2023-11-12_21-20-40----300-399-316-396.json",
+             "cats_2023-11-12_21-25-08--316.json", "cats_2023-11-12_21-25-38---396.json",
+             "cats_2023-11-12_22-27-33----400-499.json", "cats_2023-11-12_23-38-17---500-599.json",
+             "cats_2023-11-19_16-07-46---600-699.json", "cats_2023-11-19_19-06-29---700-799.json",
+             "cats_2023-11-19_19-21-07-800-899.json", "cats_2023-11-19_19-36-16---900-999.json"]
+    
+    allCats = []
+    allLength = 0
+    for i in files:
+        with open(i, 'r', encoding='utf-8') as infile:
+            dataAll = json.load(infile)
+            print(f"Name: {i} \n length:{len(dataAll)}")
+            allLength += len(dataAll)
+            for ii in dataAll:
+                allCats.append(ii)
+    with open("bengal-data.json", 'r', encoding='utf-8') as outfile:
+        allCats = json.load(outfile)
+        print(f"Name: ALLL \n length:{len(allCats)}  compared to {allLength}")    
+    """
